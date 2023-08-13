@@ -6,7 +6,7 @@ int main(int argv, char** args) {
     framebuffer.clear();
     SDL_Init(SDL_INIT_EVERYTHING);
 
-    SDL_Window* window = SDL_CreateWindow("life", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+    SDL_Window* window = SDL_CreateWindow("life", 50, 50, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 
     SDL_Renderer* renderer = SDL_CreateRenderer(
         window,
@@ -16,6 +16,8 @@ int main(int argv, char** args) {
 
     bool running = true;
     SDL_Event event;
+
+    framebuffer.initialRender();
 
     while (running) {
         while (SDL_PollEvent(&event)) {
